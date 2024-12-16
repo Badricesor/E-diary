@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scribble</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!-----------------------------page 3----- --------------------- -->
+    <div class="page3">
+        <h3>Scribble</h3><hr >
+        <a href="javascript:void(0)"><img class="vert-icon" src="./photos/vert2.svg" alt="" onclick="menu()" ></a>
+    <div class="theme-section" >
+        <div ><h4 class="select-theme">Select Theme</h4></div><br>
+        <div class="themes">
+            <a href="#"><div onclick="change1()"  class="t1"></div> </a>
+            <a href="#"><div onclick="change2()" class="t2"></div></a>
+            <a href="#"><div onclick="change3()" class="t3"></div> </a>
+        </div>
+
+        <div class="themes2">    
+            <a href="#"><div onclick="change4()" class="t4"></div></a>
+            <a href="#"><div onclick="change5()" class="t5"></div> </a>
+            <a href="#"><div onclick="change6()" class="t6"></div> </a>
+        </div>
+
+        <div class="themes3">    
+            <a href="#"><div onclick="change7()" class="t7"></div> </a>
+            <a href="#"><div onclick="change8()" class="t8"></div> </a>
+            <a href="#"><div onclick="change9()" class="t9"></div> </a>
+        </div>
+        <div class="themes4">    
+            <a href="#"><div onclick="change10()" class="t10"></div> </a>
+ 
+        </div>
+
+        <div id="theme-content">
+        <div class="text-area">
+            <form action="savepage.html">
+            <textarea onclick="menu()" id="theme-color" placeholder=  "Share your memories...." id="contentbox" rows="28" cols="38"></textarea>
+        </form>
+        </div>
+        <div>
+            <img class="save" onclick="savepage()"  id="save-file" src="./photos/save.svg" alt=""><br>
+            <h5  >save</h5>
+        </div>
+        </div>
+        <!-- onclick="location.href='savepage.html';" -->
+
+    </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    // -------------------------t1 --------------------
+    function change1(){
+        document.getElementById('theme-content').style.display='block' 
+        document.getElementById('theme-color').style.backgroundColor='rgb(25, 40, 41)' 
+        document.getElementsByClassName('theme-selection').style.display='none';
+    }
+   
+    // -----------------------t2 --------------------
+    function change2(){
+        document.getElementById('theme-content').style.display='block' 
+        document.getElementById('theme-color').style.backgroundColor=' rgb(56, 5, 35)' 
+        document.getElementsByClassName('theme-selection').style.display='none';
+    }
+
+    // -----------------------t3 --------------------
+    function change3(){
+        document.getElementById('theme-content').style.display='block' 
+        document.getElementById('theme-color').style.backgroundColor=' rgb(1, 60, 75)' 
+        document.getElementsByClassName('theme-selection').style.display='none';
+    }
+
+    // -----------------------t4 --------------------
+    function change4(){
+        document.getElementById('theme-content').style.display='block' 
+        document.getElementById('theme-color').style.backgroundColor=' rgb(1, 2, 37)' 
+        document.getElementsByClassName('theme-selection').style.display='none';
+    }
+
+    // -----------------------t5 --------------------
+    function change5(){
+        document.getElementById('theme-content').style.display='block' 
+        document.getElementById('theme-color').style.backgroundColor=' rgb(2, 22, 31)' 
+        document.getElementsByClassName('theme-selection').style.display='none';
+    }
+
+     // -----------------------t6 --------------------
+    function change6(){
+        document.getElementById('theme-content').style.display='block' 
+        document.getElementById('theme-color').style.backgroundColor=' rgb(63, 35, 2)' 
+        document.getElementsByClassName('theme-selection').style.display='none';
+    }
+
+     // -----------------------t7 --------------------
+     function change7(){
+        document.getElementById('theme-content').style.display='block' 
+        document.getElementById('theme-color').style.backgroundColor=' rgb(18, 19, 18)' 
+        document.getElementsByClassName('theme-selection').style.display='none';
+    }
+
+     // -----------------------t8 --------------------
+     function change8(){
+        document.getElementById('theme-content').style.display='block' 
+        document.getElementById('theme-color').style.backgroundColor=' rgb(22, 5, 5)' 
+        document.getElementsByClassName('theme-selection').style.display='none';
+    }
+
+     // -----------------------t9 --------------------
+     function change9(){
+        document.getElementById('theme-content').style.display='block' 
+        document.getElementById('theme-color').style.backgroundColor=' rgb(1, 46, 38)' 
+        document.getElementsByClassName('theme-selection').style.display='none';
+    }
+
+     // -----------------------t10 --------------------
+     function change10(){
+        document.getElementById('theme-content').style.display='block' 
+        document.getElementById('theme-color').style.backgroundColor=' rgb(16, 1, 26)' 
+        document.getElementsByClassName('theme-selection').style.display='none';
+    }
+
+    function savepage(){
+    var  contentbox = document.getElementById('theme-color').value;
+    var styles= document.getElementById('theme-content');
+        localStorage.setItem("style",styles);
+        localStorage.setItem("text", JSON.stringify( contentbox));
+        
+        JSON.parse(localStorage.getItem(contentbox));
+        
+        
+        if(contentbox===''){
+            alert("type something");
+            localStorage.setItem("text",JSON.stringify(contentbox.value));
+        }else{
+            contentbox;
+            alert("saved successfully");
+            console.log("saved successfully");
+            window.open('savepage.html');
+            document.forms(textarea);
+            
+        }
+
+
+    }
+
+</script>
+
+
+
+</html>

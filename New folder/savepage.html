@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-theme">
+        <div class="header"><h3>Scribble</h3></div><hr >
+        <a href="javascript:void(0)"><img class="vert-icon" src="./photos/vert2.svg" alt=""  ></a>
+      <!-- -------- ------------------ -->
+        
+        <h4 id="save-head">My Saves</h4>
+        <div id="list">
+
+        </div>
+        
+        
+    </div>
+    </div>
+    
+</body>
+
+<script>
+
+    window.onload= function(){
+
+        
+        let a= document.getElementById('list').textContent=localStorage.getItem('text');
+    
+
+        
+       
+    }
+
+
+
+</script>
+
+
+
+</html>
